@@ -89,7 +89,7 @@ ENV/
 .ropeproject
 
 # Data
-results-*.csv
-memfs-*.log
-memfs.json
-mprof/*.dat 
+fixtures/*.log
+fixtures/*.csv
+fixtures/memfs.json
+fixtures/mprof/*.dat

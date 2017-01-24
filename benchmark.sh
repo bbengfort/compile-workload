@@ -3,8 +3,8 @@
 
 # Create the results file
 DATE=$(date +%Y%m%d%H%M)
-MEMFSLOG="memfs-$DATE.log"
-RESULTS="results-$DATE.csv"
+MEMFSLOG="fixtures/memfs-$DATE.log"
+RESULTS="fixtures/results-$DATE.csv"
 
 # Test Paths
 TESTDIR="disk"
@@ -27,7 +27,7 @@ rmdir $TESTDIR
 mkdir $MEMFSDIR
 
 run_memfs_workload() {
-    memfs -c memfs.json memfs/ > $MEMFSLOG 2>&1 &
+    memfs -c fixtures/memfs.json memfs/ > $MEMFSLOG 2>&1 &
     PID=$!
     $WORKLOAD -p $1 -o $RESULTS $MEMFSDIR
     kill -INT $PID
